@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NodeJS final project</title>
+    <script src="./code.js"></script>
+    <script>
+        getData();
+        /*setInterval(() => {
+            window.location.reload(1);
+        }, 5000);
+        */
+    </script>
+</head>
+<body>
+    <h1>
+        Welcome to the Corona counter
+    </h1>
+    <hr>
+    <select id="counteries">
+    </select>
+    <button onclick="getcountrydata()">
+        Select Country
+    </button>
+    <br>
+    <input type="number" id="cases"> <button onclick="updateCounter()">Update the Counter</button>
+    <hr>
+    <div >
+        <table id="table" border="1px">
+            <thead>
+                <tr>
+                    <td>
+                        Country
+                    </td>
+                    <td>
+                        Population
+                    </td>
+                    <td>
+                        Corona Counter
+                    </td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    
+</body>
+</html>
