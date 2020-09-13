@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 const database = require('./database.json');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 app.use(express.static(__dirname));
 app.use(bodyParser.json())
@@ -29,5 +29,5 @@ app.put("/edit/:c",
 );
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+    //console.log(`Example app listening at http://localhost:${port}`)
   })

@@ -4,20 +4,36 @@
         fetch("/getdata")
         .then(res=>res.json())
         .then(data=>{
-            document.getElementById("table").innerHTML=" ";
+            document.getElementById("table").innerHTML="";
             data.forEach(element => {
-                document.getElementById("counteries").innerHTML+=`<option value="${element.name}">
-                ${element.name}
-                </option>`;
+                //document.getElementById("table").innerHTML="";
                 document.getElementById("table").innerHTML+=`
-            <tr>
-            <td>${element.name}</td>
-            <td>${element.population}</td>
-            <td>${element.counter}</td>
-            </tr>`
+                <tr>
+                <td>${element.name}</td>
+                <td>${element.population}</td>
+                <td>${element.counter}</td>
+                </tr>`
             });
         })
         .catch(err=>console.log("Error",err));
+        }
+
+        function getDataForCountries(){
+
+            fetch("/getdata")
+        .then(res=>res.json())
+        .then(data=>{
+
+            data.forEach(element => {
+                
+                document.getElementById("counteries").innerHTML+=`<option value="${element.name}">
+                ${element.name}
+                </option>`;
+            });
+        })
+        .catch(err=>console.log("Error",err));
+
+            
         }
 
         /*db.forEach(element=>{
@@ -47,5 +63,5 @@
                 };
             let res= await (fetch(`/edit/${country}`,initParam));
             console.log(res);
-            //getData();
+            getData();
         }
